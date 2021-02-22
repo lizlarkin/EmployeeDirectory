@@ -1,9 +1,10 @@
 import React from 'react'
+import Card from './../Components/Card/Card';
 
 const AllEmployees = () => {
     return (
         <div>
-            <h1>All</h1>
+            <Card pageTitle={"All Employees"}/>
         </div>
     )
 }

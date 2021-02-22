@@ -13,8 +13,8 @@ const Footer = () => {
 
     return (
         <div>
-            <nav class= "navbar fixed-bottom navbar-light bg-dark" style = {styles.footerStyles}>
-                <p class="justify-content-center">&#169; copyright 2021</p>
+            <nav className= "navbar fixed-bottom navbar-light bg-dark" style = {styles.footerStyles}>
+                <p className="justify-content-center">&#169; copyright 2021</p>
             </nav>
         </div>
     )

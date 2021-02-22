@@ -1,9 +1,10 @@
 import React from 'react'
+import Card from './../Components/Card/Card';
 
 const Locations = () => {
     return (
         <div>
-            <h1>Locations</h1>
+            <Card pageTitle={"Employee Locations"}/>
         </div>
     )
 }

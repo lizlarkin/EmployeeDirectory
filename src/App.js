@@ -7,10 +7,13 @@ import Home from './Pages/Home';
 import AllEmployees from './Pages/AllEmployees';
 import Locations from './Pages/Locations';
 import Email from './Pages/Email';
+import Card from './Components/Card/Card';
+import Users from './Components/Users/Users';
 
 function App() {
   return (
     <div className="App">
+
       <BrowserRouter>
         <Nav />
         <Switch>
@@ -18,9 +21,9 @@ function App() {
           <Route path="/AllEmployees" component={AllEmployees} />
           <Route path="/Locations" component={Locations} />
           <Route path="/Email" component={Email} />
-
         </Switch>
       </BrowserRouter>
+      <Users />
       <Footer />
     </div>
   );

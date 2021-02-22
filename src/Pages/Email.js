@@ -5,7 +5,7 @@ import Card from './../Components/Card/Card';
 const Email = () => {
     return (
         <div>
-            <Card pageTitle={"Employee Email"}/>
+            <Card title="Employee Email"/>
         </div>
     )
 }

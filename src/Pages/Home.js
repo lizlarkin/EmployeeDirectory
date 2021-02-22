@@ -4,7 +4,7 @@ import Card from './../Components/Card/Card';
 const Home = () => {
     return (
         <div>
-            <Card pageTitle={"Employee Directory"}/>
+            <Card title="Employee Directory"/>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import Card from './../Components/Card/Card';
 const Locations = () => {
     return (
         <div>
-            <Card pageTitle={"Employee Locations"}/>
+            <Card title="Employee Locations"/>
         </div>
     )
 }

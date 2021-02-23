@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Employee from './../Employee/Employee';
+import { useState } from 'react'
+import axios from 'axios';
 
 export default class Users extends Component {
     
@@ -12,12 +14,11 @@ export default class Users extends Component {
       componentDidMount() {
         const url = 'https://randomuser.me/api/';
         const betterUrl = 'https://randomuser.me/api/?results=15';
-        fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-            // set value of state based on API data
-            this.setState({ users: data})
-            console.log('Random User API Data:', data);
+        axios.get(url)
+        .then((response) => {
+          const users = response.data
+          this.setState({users})
+          console.log(users)
         })
     }
 

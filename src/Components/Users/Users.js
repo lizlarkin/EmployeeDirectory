@@ -1,53 +1,66 @@
-import React, { Component } from 'react'
-import Employee from './../Employee/Employee';
-import { useState } from 'react'
-import axios from 'axios';
+import { useEffect, useState } from "react";
 
-export default class Users extends Component {
+import React from 'react'
+import Employee from "../Employee/Employee";
+
+const Users = () => {
+  const [users, setUsers] = useState(null)
+
+  useEffect(() => {
+    fetch('https://randomuser.me/api/?results=15')
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        setUsers(data);
+        console.log(data)
+      })
+  }, [])
+
+  return (
+    <div className="home">
+      {users && <Employee users={users} />}
+    </div>
+  );
+}
+
+export default Users
+
+
+
+
+// import React, { Component } from 'react'
+// import Employee from './../Employee/Employee';
+// import { useState } from 'react'
+// import axios from 'axios';
+
+// export default class Users extends Component {
     
-    // Create state object to hold data from API
-    state = {
-        users: []
-    }
+//     // Create state object to hold data from API
+//     state = {
+//         users: []
+//     }
 
-    // Connect to API
-      componentDidMount() {
-        const url = 'https://randomuser.me/api/';
-        const betterUrl = 'https://randomuser.me/api/?results=15';
-        axios.get(url)
-        .then((response) => {
-          const users = response.data
-          this.setState({users})
-          console.log(users)
-        })
-    }
+//     // Connect to API
+//       componentDidMount() {
+//         const url = 'https://randomuser.me/api/';
+//         const betterUrl = 'https://randomuser.me/api/?results=15';
+//         axios.get(url)
+//         .then((response) => {
+//           const users = response.data
+//           this.setState({users})
+//           // setInterval(this.setState, 5000); // runs every 5 seconds.
+//           console.log(users)
+//         })
+//     }
 
-    render() {
-        return (
-          <Employee users={this.state.users} />
-        )
-      }
-    }
+//     render() {
+//         return (
+//           <Employee users={this.state.users} />
+//         )
+//       }
+//     }
 
-
-
-
-// import React from 'react';
-
-
-// class Users extends React.Component {
-//   componentDidMount() {
-//     const url = 'https://randomuser.me/api/?results=15';
-//     fetch(url)
-//       .then((response) => response.json())
-//       .then((data) => console.log('Random User API Data:', data));
-//   }
-//   render() {
-//     return <h3>Select preferred method for viewing employees:</h3>;
-    
-//   }
-// }
-// export default Users;
 
 
 

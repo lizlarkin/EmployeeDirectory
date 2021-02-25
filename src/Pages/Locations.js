@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Card from './../Components/Card/Card';
-import API from '../utils/API';
 import axios from 'axios'
 
 
@@ -26,11 +25,12 @@ export default class Locations extends Component {
         return (
             <>
             <Card title="Employee Locations"/>
-            <div>
-                <button value="US" onClick={(e)=> this.handleBtnClick(e)}>United States</button>
-                <button value="GB" onClick={(e)=> this.handleBtnClick(e)}>Great Britain</button>
-                <button value="CA" onClick={(e)=> this.handleBtnClick(e)}>Canada</button>
-                <button value="DE" onClick={(e)=> this.handleBtnClick(e)}>Germany</button>
+            <h3 style={{marginTop: "25px", marginBottom: "25px"}}>Select country to see employee information in selected region:</h3>
+            <div style={{marginBottom: "35px"}}>
+                <button style={{width: "150px", marginRight:"10px"}} className="btn btn-outline-primary" value="US" onClick={(e)=> this.handleBtnClick(e)}>United States</button>
+                <button style={{width: "150px", marginRight:"10px"}} className="btn btn-outline-primary" value="GB" onClick={(e)=> this.handleBtnClick(e)}>Great Britain</button>
+                <button style={{width: "150px", marginRight:"10px"}} className="btn btn-outline-primary" value="CA" onClick={(e)=> this.handleBtnClick(e)}>Canada</button>
+                <button style={{width: "150px", marginRight:"10px"}} className="btn btn-outline-primary" value="DE" onClick={(e)=> this.handleBtnClick(e)}>Germany</button>
             </div>
 
             <div>

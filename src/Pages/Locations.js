@@ -1,28 +1,31 @@
 import React, { Component } from 'react'
+import Card from './../Components/Card/Card';
 import API from '../utils/API';
+import axios from 'axios'
+
 
 export default class Locations extends Component {
     state = {
-        search: "",
-        nat: [],
-        results: [],
-        error: ""
+        nat: "",
+        data: [],
       };
 
       handleBtnClick = (e) => {
-          console.log(e.target.value)
-          this.setState({nat: e.target.value})
-      }
+        console.log(e.target.value)
+        this.setState({nat: e.target.value})
+    
+        axios.get("https://randomuser.me/api/?nat=US")
+        .then(res => this.setState({data: res.data.results}))
+    
+    }
 
-      componentDidMount() {
-        API.getEmployeeByLocation()
-          .then(res => this.setState({ nat: res.data.message }))
-          .catch(err => console.log(err));
-      }
+    
+
 
       render() {
         return (
             <>
+            <Card title="Employee Locations"/>
             <div>
                 <button value="US" onClick={(e)=> this.handleBtnClick(e)}>United States</button>
                 <button value="GB" onClick={(e)=> this.handleBtnClick(e)}>Great Britain</button>
@@ -30,6 +33,13 @@ export default class Locations extends Component {
                 <button value="DE" onClick={(e)=> this.handleBtnClick(e)}>Germany</button>
             </div>
 
+            <div>
+                {this.state.data.map(({login, email}) =>{
+                    return(<li key={login.uuid}>{email}</li>)
+                }
+                    
+                )}
+            </div>
             {/* <div className = "row">
             <div className = 'col-sm-4'></div>
             <div className="card col-sm-4"> 

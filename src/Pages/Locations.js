@@ -9,36 +9,44 @@ export default class Locations extends Component {
         error: ""
       };
 
+      handleBtnClick = (e) => {
+          console.log(e.target.value)
+          this.setState({nat: e.target.value})
+      }
+
       componentDidMount() {
         API.getEmployeeByLocation()
           .then(res => this.setState({ nat: res.data.message }))
           .catch(err => console.log(err));
       }
 
-      handleInputChange = event => {
-        this.setState({ search: event.target.value });
-      };
-
-      handleFormSubmit = event => {
-        event.preventDefault();
-        API.getDogsOfBreed(this.state.search)
-          .then(res => {
-            if (res.data.status === "error") {
-              throw new Error(res.data.message);
-            }
-            this.setState({ results: res.data.message, error: "" });
-          })
-          .catch(err => this.setState({ error: err.message }));
-      };
-
       render() {
         return (
-          <div>
-            <button>US</button>
-            <button>GB</button>
-            <button>AU</button>
-            <button>CH</button>
-          </div>
+            <>
+            <div>
+                <button value="US" onClick={(e)=> this.handleBtnClick(e)}>United States</button>
+                <button value="GB" onClick={(e)=> this.handleBtnClick(e)}>Great Britain</button>
+                <button value="CA" onClick={(e)=> this.handleBtnClick(e)}>Canada</button>
+                <button value="DE" onClick={(e)=> this.handleBtnClick(e)}>Germany</button>
+            </div>
+
+            {/* <div className = "row">
+            <div className = 'col-sm-4'></div>
+            <div className="card col-sm-4"> 
+                <img src={users.results[0].picture.large} className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">{users.results[0].name.first} {users.results[0].name.last}</h5>
+                </div>
+                <ul className="list-group list-group-flush">
+                    <li className="list-group-item">Location: {users.results[0].location.city}, {users.results[0].location.country}</li>
+                    <li className="list-group-item">Email: {users.results[0].email}</li>
+                    <li className="list-group-item">Phone: {users.results[0].phone}</li>
+                </ul>
+            </div>
+            <div className = 'col-sm-4'></div>
+        </div> */}
+
+</>
         );
       }
 }

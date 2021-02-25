@@ -1,5 +1,6 @@
 module.exports = {
     employeeStyles: {
-        color: "red",
+        color: "#2980b9",
+        
     }
 }

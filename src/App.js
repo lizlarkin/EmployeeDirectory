@@ -7,8 +7,6 @@ import Home from './Pages/Home';
 import AllEmployees from './Pages/AllEmployees';
 import Locations from './Pages/Locations';
 import Email from './Pages/Email';
-import Card from './Components/Card/Card';
-import Users from './Components/Users/Users';
 
 function App() {
   return (
@@ -23,7 +21,7 @@ function App() {
           <Route path="/Email" component={Email} />
         </Switch>
       </BrowserRouter>
-      <Users />
+      
       <Footer />
     </div>
   );

@@ -13,7 +13,7 @@ export default class Locations extends Component {
         console.log(e.target.value)
         this.setState({nat: e.target.value})
     
-        axios.get("https://randomuser.me/api/?nat=US")
+        axios.get("https://randomuser.me/api/?nat=" + this.state.nat)
         .then(res => this.setState({data: res.data.results}))
     
     }
@@ -34,8 +34,8 @@ export default class Locations extends Component {
             </div>
 
             <div>
-                {this.state.data.map(({login, email}) =>{
-                    return(<li key={login.uuid}>{email}</li>)
+                {this.state.data.map(({login, name, email}) =>{
+                    return(<li key={login.uuid}>{name.first} {name.last}: {email}</li>)
                 }
                     
                 )}

@@ -22,9 +22,6 @@ const Nav = () => {
                             <li className="nav-item">
                                 <Link to="/Locations" style={styles.linkStyles}>Location</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/Email" style={styles.linkStyles}>Email</Link>
-                            </li>
                         </ul>
                     </div>
                 </div>

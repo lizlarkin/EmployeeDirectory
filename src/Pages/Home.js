@@ -24,10 +24,6 @@ const Home = () => {
         <button type="button" className="btn btn-light btn-lg btn-block" style={styles.btnStyles}>Employee Locations</button>
         </Link>
 
-        <Link to="/Email">
-        <button type="button" className="btn btn-light btn-lg btn-block" style={styles.btnStyles}>Employee Email</button>
-        </Link>
-
          </>
     )
 }

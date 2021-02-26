@@ -25,7 +25,7 @@ MIT License: A short and simple permissive license with conditions only requirin
 * Email me with addition questions at: enlarkin@gmail.com
 
 ## Link to the deployed page
-:https://larkin-burger.herokuapp.com/
+:https://employee-directory-larkin.herokuapp.com/Home
 
 ## Screenshot: 
 <img src="employee-directory-screenshot.png">

@@ -3,9 +3,6 @@ import styles from "./EmployeeStyles"
 
 const Employee = ({users}) => {
 
-    // Convert object to array
-    // const employeeArr = Object.entries(users)
-    // console.log(employeeArr)
 
     return (
 
